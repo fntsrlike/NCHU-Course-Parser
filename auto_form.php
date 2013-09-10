@@ -6,15 +6,13 @@ require "info_to_array.php";
 
 $target = "https://onepiece.nchu.edu.tw/cofsys/plsql/crseqry_home";
 
-$data_array['v_year']   = $_POST['v_year'];
-$data_array['v_career'] = $_POST['v_career'];
-$data_array['v_dept']   = $_POST['v_dept'];
-$data_array['v_level']  = $_POST['v_level'];
-$data_array['v_text']   = "";
-$data_array['v_teach']  = "";
-$data_array['v_week']   = "";
-$data_array['v_mtg']    = "";
-$data_array['v_lang']   = "";
+$input_name = array('v_year', 'v_career', 'v_dept', 'v_level', 
+                    'v_text', 'v_teach', 'v_week', 'v_mtg', 'v_lang');
+
+foreach ($input_name as $key => $value) {
+    $data_array[$value]   = isset($_POST[$value])   ? $_POST[$value]   : '';
+}
+
 
 echo '<pre>';
 print_r(info_to_array($target, $data_array)); 
