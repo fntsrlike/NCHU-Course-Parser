@@ -1,10 +1,10 @@
 <?php
 include ("./parse/LIB_parse.php");
-
+include ("./data.php");
 
 function info_to_array ($target_url, $argu, $type = 'key') {
 
-    include ("./data.php");
+    $header_array = get_header();
 
     $get_string = '';
 
@@ -34,11 +34,11 @@ function info_to_array ($target_url, $argu, $type = 'key') {
     # Turn class to array
     foreach ($per_cless as $c_key => $c_value) {
         $tmp = return_between($c_value, '<TR>', '</TR>', EXCL);
-        $per_element = parse_array($tmp, '<TD>', '</TD>');
+        $per_element = parse_array($tmp, '>', '</TD>');
 
         $array_no = '';
         foreach ($per_element as $e_key => $e_value) {
-            $tmp2 = return_between($e_value, '<TD>', '</TD>', EXCL);
+            $tmp2 = return_between($e_value, '>', '</TD>', EXCL);
             
             if ($e_key == 1) {
                 $tmp2 = return_between($e_value, '">', '</a>', EXCL);
