@@ -24,8 +24,8 @@ function info_to_array ($target_url, $argu, $type = 'key') {
     
 
     # Get CLASS html string
-    $table = return_between($str, '班別:</strong>', '</TABLE>', EXCL);
-
+    $table = return_between($str, '班別:', '</TABLE>', EXCL);
+    $table = str_ireplace('</strong>', '', $table);
     # Turn content to a class per unit
     $table = str_ireplace('<TR>', '</TR><TR>', $table);    
     $per_cless = parse_array($table, '<TR>', '</TR>');
