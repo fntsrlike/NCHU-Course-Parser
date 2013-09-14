@@ -8,8 +8,8 @@ $target = "https://onepiece.nchu.edu.tw/cofsys/plsql/crseqry_home";
     
 $input_name['v_year']   = '1021';
 $input_name['v_career'] = 'U';
-$input_name['v_dept']   = 'U13';
-$input_name['v_level']  = '';
+$input_name['v_dept']   = 'U12';
+$input_name['v_level']  = '1';
 
 
 
