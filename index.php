@@ -1,18 +1,27 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>NCHU ODA - 課程系統</title>
-</head>
-<body>
-    <h2>NCHU Open Data Application</h2>
-    <h1>課程系統</h1>
-    <div>
-        <h3>課程選項</h3>
-        <?php require "form.php"; ?>
-    </div>
-        <h3>課程一周比較表</h3>
-        <?php require "counter.php"; ?>
-    </div>
-</body>
-</html>
+<?php
+ini_set("display_errors", "On"); 
+error_reporting(E_ALL & ~E_NOTICE);
+
+require "core/counter_core.php";
+require "core/json_core.php";
+require "helper.php";
+require "parse/LIB_parse.php";
+
+$action = isset($_GET['action']) ? $_GET['action'] : $_POST['action'];
+
+require 'template_header.php';
+
+switch ($action) {
+    case 'counter':
+        counter_core();
+        break;
+    case 'json':
+        json_core();
+        break;
+
+    default:
+        require "main.php";
+        break;
+}
+
+require 'template_footer.php';
