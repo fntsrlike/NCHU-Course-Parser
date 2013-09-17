@@ -94,7 +94,12 @@ function year_opt_printer($from, $to) {
     }
 
     foreach ($arr_opt as $key => $value) {
-        echo "<option value=\"$value\">$value</option>\n";
+        if ($key == $number-1) {
+            echo "<option value=\"$value\" selected=\"selected\">$value</option>\n";
+        }
+        else {
+            echo "<option value=\"$value\">$value</option>\n";
+        }
     }
 }
 
