@@ -47,7 +47,7 @@ function counter_core() {
     }
 
     echo <<<_EOF
-    <h2>NCHU Open Data: 歷史系課程時段一周比較表</h2>
+    <h2>NCHU Open Data: 課程時段一周比較表</h2>
         <table class="table table-bordered class_table">
             <thead>
                 <tr>
