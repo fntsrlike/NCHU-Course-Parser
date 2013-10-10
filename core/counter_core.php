@@ -8,7 +8,7 @@ function counter_core() {
     $input_name['v_level']  = '';
 
     $level_f = ($_POST['v_level_f'] != '') ? $_POST['v_level_f'] : 1;
-    $level_t = ($_POST['v_level_t'] != '') ? $_POST['v_level_f'] : 4;
+    $level_t = ($_POST['v_level_t'] != '') ? $_POST['v_level_t'] : 4;
 
     $class_arr = array();
 
