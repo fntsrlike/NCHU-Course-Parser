@@ -6,6 +6,7 @@ require "core/counter_core.php";
 require "core/json_core.php";
 require "helper.php";
 require "parse/LIB_parse.php";
+require "parse/nchu_class_parse.php";
 
 $action = isset($_GET['action']) ? $_GET['action'] : $_POST['action'];
 

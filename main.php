@@ -1,8 +1,10 @@
-
+<hr/>
 <div>
-    <h3>課程選項</h3>
+    <h2>Open Data by JSON</h2>
     <?php require "forms/json_form.php"; ?>
 </div>
-    <h3>課程一周比較表</h3>
+<hr/>
+<div>
+    <h2>課程一周比較表</h2>
     <?php require "forms/counter_form.php"; ?>
 </div>

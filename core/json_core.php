@@ -1,7 +1,7 @@
 <?php
 
 function json_core() {
-    $target = "https://onepiece.nchu.edu.tw/cofsys/plsql/crseqry_home";
+    $target = "normal";
 
     $input_name = array('v_year', 'v_career', 'v_dept', 'v_level', 
                         'v_text', 'v_teach', 'v_week', 'v_mtg', 'v_lang');
@@ -11,6 +11,6 @@ function json_core() {
     }
 
     echo '<pre>';
-    print_r(parse($target, $data_array)); 
+    print_r(class_parse($target, $data_array)); 
     echo '</pre>';    
 }

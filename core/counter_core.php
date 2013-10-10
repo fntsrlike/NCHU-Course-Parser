@@ -1,6 +1,6 @@
 <?php
 function counter_core() {
-    $target = "https://onepiece.nchu.edu.tw/cofsys/plsql/crseqry_home";
+    $target = "normal";
         
     $input_name['v_year']   = $_POST['v_year'];
     $input_name['v_career'] = $_POST['v_career'];
@@ -14,7 +14,7 @@ function counter_core() {
 
     for ($i=$level_f; $i <= $level_t; $i++) { 
         $input_name['v_level']  = $i;
-        $class_arr =  array_merge($class_arr, parse($target, $input_name)); 
+        $class_arr =  array_merge($class_arr, class_parse($target, $input_name)); 
     }
 
     $counter = array();
