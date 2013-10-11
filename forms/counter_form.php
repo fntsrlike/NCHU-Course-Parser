@@ -24,5 +24,6 @@
     </select>
     
     <input type="hidden" name="action" value="counter" />
+    <input type="hidden" name="class_type" value="normal" />
     <input type="submit" value="開始查詢" />
 </form>

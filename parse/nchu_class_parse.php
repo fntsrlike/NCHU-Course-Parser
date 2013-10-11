@@ -20,8 +20,7 @@ function class_parse ($class_type, $argu, $output_type = 'key') {
         $get_string .= "$key=$value&";
     }
     $url = $target_url . '?' . $get_string;
-    $url = ($class_type == 'liberal') ? $url . 'v_check=1' : $url;
-
+    
     # Get html string
     $str = '';
     $file_handle = fopen($url, "r");

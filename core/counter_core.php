@@ -1,21 +1,43 @@
 <?php
 function counter_core() {
-    $target = "normal";
-        
-    $input_name['v_year']   = $_POST['v_year'];
-    $input_name['v_career'] = $_POST['v_career'];
-    $input_name['v_dept']   = $_POST['v_dept'];
-    $input_name['v_level']  = '';
 
-    $level_f = ($_POST['v_level_f'] != '') ? $_POST['v_level_f'] : 1;
-    $level_t = ($_POST['v_level_t'] != '') ? $_POST['v_level_t'] : 4;
+    $class_type = $_POST['class_type'];
 
-    $class_arr = array();
+    /* normal class */
+    if ($class_type == 'normal') {
+        $input_name['v_year']   = $_POST['v_year'];
+        $input_name['v_career'] = $_POST['v_career'];
+        $input_name['v_dept']   = $_POST['v_dept'];
+        $input_name['v_level']  = '';
 
-    for ($i=$level_f; $i <= $level_t; $i++) { 
-        $input_name['v_level']  = $i;
-        $class_arr =  array_merge($class_arr, class_parse($target, $input_name)); 
+        $level_f = ($_POST['v_level_f'] != '') ? $_POST['v_level_f'] : 1;
+        $level_t = ($_POST['v_level_t'] != '') ? $_POST['v_level_t'] : 4;
+
+        $class_arr = array();
+
+        for ($i=$level_f; $i <= $level_t; $i++) { 
+            $input_name['v_level']  = $i;
+            $class_arr =  array_merge($class_arr, class_parse($class_type, $input_name)); 
+        }
+
     }
+
+    /* Liberal claass */
+    else if ($class_type == 'liberal'){
+        $input_name['v_year']       = $_POST['v_year'];
+        $input_name['v_subject']    = $_POST['v_subject'];
+        $input_name['v_group']      = $_POST['v_group'];
+        $input_name['check']        = $_POST['v_group'];
+
+        $class_arr =  class_parse($class_type, $input_name); 
+    }
+    else {
+        exit($class_type.'課程型別錯誤！！');
+    }
+    
+    
+
+    /* 相同程序 */
 
     $counter = array();
     for ($i=1; $i <6 ; $i++) { 
