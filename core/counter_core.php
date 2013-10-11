@@ -27,7 +27,7 @@ function counter_core() {
         $input_name['v_year']       = $_POST['v_year'];
         $input_name['v_subject']    = $_POST['v_subject'];
         $input_name['v_group']      = $_POST['v_group'];
-        $input_name['check']        = $_POST['v_group'];
+        $input_name['v_check']        = $_POST['v_check'];
 
         $class_arr =  class_parse($class_type, $input_name); 
     }
