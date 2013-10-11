@@ -1,33 +1,5 @@
-<h4>一般課程</h4>
-<form action="index.php" method="POST">
-    <span>學年期：</span>
-    <select name="v_year">
-        <?php year_opt_printer("0951",  "1021");?>
-    </select>
-
-    <span>學制：</span>
-    <select name="v_career">
-    <option selected="" value="U">學士班
-    </select>
-
-    <span>系所
-    <select name="v_dept">
-        <?php dept_opt_printer();?>
-    </select>
-    </span>
-
-    <span>年級：</span>
-    <select name="v_level">
-        <?php grade_opt_printer();?>
-    </select>
-
-    <input type="hidden" name="action" value="json" />
-    <input type="hidden" name="class_type" value="normal" />
-    <input type="submit" value="開始查詢">
-</form>
-
-<h4>通識課程</h4>
-<form action="index.php" method="POST">
+    <input type="hidden" name="class_type" value="liberal" />
+    
     <span>學年期：</span>
     <select name="v_year">
         <?php year_opt_printer("0951",  "1021");?>
@@ -54,7 +26,3 @@
         <option value="GEHC">文化學群</option>
     </select>    
     <input type="hidden" name="v_check" value="1" />
-    <input type="hidden" name="action" value="json" />
-    <input type="hidden" name="class_type" value="liberal" />
-    <input type="submit" value="開始查詢">
-</form>
