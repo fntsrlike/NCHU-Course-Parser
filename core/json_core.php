@@ -24,6 +24,6 @@ function json_core() {
     }
 
     echo '<pre>';
-    print_r(class_parse($class_type, $data_array)); 
+    echo json_encode(class_parse($class_type, $data_array)); 
     echo '</pre>';    
 }
